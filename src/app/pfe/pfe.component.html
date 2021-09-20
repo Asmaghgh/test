@@ -1,94 +1,51 @@
   <!-- Toolbar -->
+
+
+
+
   <div class="toolbar" role="banner">
-    <img
-      width="40"
-      alt="Angular Logo"
-      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-    />
-   
-      <div class="spacer"></div>
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
-       
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-            {{node.name}}
-        </mat-tree-node>
-     
-        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
-            <div class="mat-tree-node">
-              <button mat-icon-button matTreeNodeToggle
-                      [attr.aria-label]="'Toggle ' + node.name">
-                <mat-icon class="mat-icon-rtl-mirror">
-                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-              </button>
-              {{node.name}}
-            </div>
-            
-            <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
-                role="group">
-              <ng-container matTreeNodeOutlet></ng-container>
-          </div>
-        </mat-nested-tree-node>
-      </mat-tree>
-
+  
+    <img width="100" href="https://www.med.tn/uploads/clinics/654125224c5b498e09d174067335f97a.jpg" src="https://www.med.tn/uploads/clinics/654125224c5b498e09d174067335f97a.jpg">
 
       <div class="spacer"></div>
+      <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>keyboard_arrow_down</mat-icon>VOS BESOINS</button>
+       <mat-menu #belowMenu="matMenu" yPosition="below">
+       <button mat-menu-item>Item 1</button>
+       <button mat-menu-item>Item 2</button>
+       </mat-menu>
+       <div class="spacer"></div>
+       <button mat-button [matMenuTriggerFor]="beforeMenu"><mat-icon>keyboard_arrow_down</mat-icon>VOS SOLUTIONS</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Service D'urgence</button>
+        <button mat-menu-item>Chirurgie Générale</button>
+        <button mat-menu-item>Coeliochirurgie</button>
+        <button mat-menu-item>Orthopédie</button>
+        <button mat-menu-item>Chirurgie Gynécologique</button>
+        <button mat-menu-item>Obstétrique</button>
+        <button mat-menu-item>Urologie</button>
+        <button mat-menu-item>Chirurgie Pédiatrique</button>
+        <button mat-menu-item>Pédiatrie et Néonatologie</button>
+        <button mat-menu-item>ORL</button>
+        <button mat-menu-item>Cardiologie</button>
+        <button mat-menu-item>Pneumologie</button>
+        <button mat-menu-item>Ophtalmologie</button>
+        <button mat-menu-item>Radiologie </button>
+        <button mat-menu-item (click)="onClick()">Nero-Chirurgie</button>{{asma}}
+        </mat-menu>
+        <div class="spacer"></div>
 
 
-      <mat-tree [dataSource]="dataSource1" [treeControl]="treeControl1" class="example-tree">
-       
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-            {{node.name}}
-        </mat-tree-node>
-     
-        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild1">
-            <div class="mat-tree-node">
-              <button mat-icon-button matTreeNodeToggle
-                      [attr.aria-label]="'Toggle ' + node.name">
-                <mat-icon class="mat-icon-rtl-mirror">
-                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-              </button>
-              {{node.name}}
-            </div>
-            
-            <div [class.example-tree-invisible]="!treeControl1.isExpanded(node)"
-                role="group">
-              <ng-container matTreeNodeOutlet></ng-container>
-          </div>
-        </mat-nested-tree-node>
-      </mat-tree>
-
-
-      <div class="spacer"></div>
-
-
-      <mat-tree [dataSource]="dataSource2" [treeControl]="treeControl2" class="example-tree">
-       
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-            {{node.name}}
-        </mat-tree-node>
-     
-        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild2">
-            <div class="mat-tree-node">
-              <button mat-icon-button matTreeNodeToggle
-                      [attr.aria-label]="'Toggle ' + node.name">
-                <mat-icon class="mat-icon-rtl-mirror">
-                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-              </button>
-              {{node.name}}
-            </div>
-            
-            <div [class.example-tree-invisible]="!treeControl2.isExpanded(node)"
-                role="group">
-              <ng-container matTreeNodeOutlet></ng-container>
-          </div>
-        </mat-nested-tree-node>
-      </mat-tree>
-
+        <button mat-button [matMenuTriggerFor]="afterMenu"><mat-icon>keyboard_arrow_down</mat-icon>LA CLINIQUE</button>
+         <mat-menu #afterMenu="matMenu" xPosition="after">
+         <button mat-menu-item>Urgence</button>
+         <button mat-menu-item>Chirurgie</button>
+         <button mat-menu-item>Matérnité</button>
+         <button mat-menu-item>Bloc</button>
+        </mat-menu>
       <div class="spacer"></div>
       <span>ACTUALITE</span>
+      <div class="spacer"></div>
+      <button mat-button color="primary">RECLAMATION</button>
       <div class="spacer"></div>
       <button mat-button color="primary">PRENDRE RENDEZ-VOUS</button>
       <div class="spacer"></div>
@@ -100,8 +57,7 @@
   
   <div class="content" role="main">
   
-    <img style="width:20px; height:20px; margin: 10px" href="https://www.clinique-mathilde.fr/wp-content/uploads/2017/11/046A9415.jpg" src="https://www.clinique-mathilde.fr/wp-content/uploads/2017/11/046A9415.jpg" style="">
-
+    <iframe width="1200" height="400" src="https://www.youtube.com/embed/rC6Fpw7L5xs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <input type="hidden" #selection>
   
     <div class="card-container">
@@ -145,5 +101,11 @@
         </div>
        
         <button mat-button color="primary">DECOUVRIR LA CLINIQUE</button>
-        
-  
+      <div>    
+         <h1>Les nouveautés de la semaine</h1> <br/> <div class="spacer"></div>
+       </div>
+
+
+  <mat-card>Simple card</mat-card>
+  <mat-card>Simple card</mat-card>
+  <mat-card>Simple card</mat-card>

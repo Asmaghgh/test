@@ -8,6 +8,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTreeModule} from '@angular/material/tree';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
+import {PageEvent} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -15,11 +21,11 @@ import {MatCardModule} from '@angular/material/card';
     PfeComponent
   ],
   imports: [
-    BrowserModule, MatCardModule,
-    AppRoutingModule, MatButtonModule, 
-    BrowserAnimationsModule, MatIconModule, MatTreeModule
+    BrowserModule, MatCardModule, MatMenuModule, MatExpansionModule, MatPaginatorModule,
+    AppRoutingModule, MatButtonModule, MatToolbarModule,
+    BrowserAnimationsModule, MatIconModule, MatTreeModule,  HttpClientModule
   ],
-  providers: [],
+  providers: [PageEvent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

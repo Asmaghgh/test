@@ -30,12 +30,12 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 200px;
+      height: 100px;
       display: flex;
       align-items: center;
       background-color: white;
       color: black;
-      font-weight: 600;
+      font-weight: 300;
     }
   
     .toolbar img {
@@ -110,8 +110,9 @@
     .card.card-small {
       height: 60px;
       width: 168px;
-      border: 1px solid rgb(25, 158, 240);
-      background-color: #a7d5f0;
+      border: 1px solid white;
+      background-color: white;
+      color: teal;
       display: flex;
       justify-content: center;
       
@@ -123,7 +124,7 @@
   
     .card-container .card:not(.highlight-card):hover {
       transform: translateY(-3px);
-      box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 17px rgba(92, 10, 224, 0.35);
     }
   
     .card-container .card:not(.highlight-card):hover .material-icons path {
